@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mech-tech-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-l", "8137", "."],
+      "port": 8137
+    },
+    {
+      "name": "mech-tech-motion",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "serve", "-l", "8139", "."],
+      "port": 8139
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+.jet-woo-categories .jet-woo-category-count__wrap {
+  display: block;
+  width: 100%;
+}
+.jet-woo-categories .jet-woo-category-count__wrap .jet-woo-category-count {
+  display: inline-block;
+}
+.jet-woo-categories--preset-1 .jet-woo-categories-thumbnail__wrap {
+  position: relative;
+}
+.jet-woo-categories--preset-1 .jet-woo-categories-thumbnail__wrap .jet-woo-category-count__wrap {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+.jet-woo-categories--preset-2 .jet-woo-categories-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: block;
+  max-width: 100%;
+  padding: 10px 50px;
+  pointer-events: none;
+}
+.jet-woo-categories--preset-2 .jet-woo-category-count {
+  opacity: 0;
+}
+.jet-woo-categories--preset-2 .jet-woo-categories__item:hover .jet-woo-category-count {
+  opacity: 1;
+}
+.jet-woo-categories--preset-3 .jet-woo-categories__item .jet-woo-categories-content, .jet-woo-categories--preset-4 .jet-woo-categories__item .jet-woo-categories-content {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  max-width: 100%;
+  padding: 10px 50px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.jet-woo-categories--preset-3 .jet-woo-categories__item .jet-woo-categories-title__wrap > * {
+  display: inline-block;
+}
+.jet-woo-categories--preset-3 .jet-woo-categories__item .jet-woo-categories-content .jet-woo-category-excerpt {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.jet-woo-categories--preset-3 .jet-woo-categories__item:hover .jet-woo-categories-content .jet-woo-category-excerpt {
+  max-height: 500px;
+}
+.jet-woo-categories--preset-3 .jet-woo-categories__item:hover .jet-woo-categories-content {
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+}
+.jet-woo-categories--preset-4 .jet-woo-categories__item .jet-woo-categories-title__wrap > * {
+  display: inline-block;
+}
+.jet-woo-categories--preset-4 .jet-woo-categories__item .jet-woo-categories-content .jet-woo-category-excerpt {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.jet-woo-categories--preset-5 .jet-woo-categories-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.jet-woo-categories--preset-5 .jet-woo-categories-content .jet-woo-category-content__inner {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+.jet-woo-categories--preset-5 .jet-woo-categories-content .jet-woo-category-count__wrap {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+}
+.jet-woo-categories .jet-woo-categories__inner-box {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.jet-woo-categories .jet-woo-category-thumbnail {
+  overflow: hidden;
+  text-align: center;
+  font-size: 0;
+}
+.jet-woo-categories .jet-woo-category-title {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.jet-woo-categories .jet-woo-category-count {
+  -webkit-transition: 0.2s all ease;
+  transition: 0.2s all ease;
+}
+.jet-woo-categories .jet-woo-category-excerpt {
+  padding: 0 10px;
+}
+.jet-woo-categories .jet-woo-category-img-overlay__hover,
+.jet-woo-categories .jet-woo-category-img-overlay {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.jet-woo-categories .jet-woo-categories__item .jet-woo-category-img-overlay__hover {
+  opacity: 0;
+}
+.jet-woo-categories .jet-woo-categories__item:hover .jet-woo-category-img-overlay {
+  opacity: 0;
+}
+.jet-woo-categories .jet-woo-categories__item:hover .jet-woo-category-img-overlay__hover {
+  opacity: 1;
+}
+.jet-woo-categories.jet-equal-cols .jet-woo-categories__item {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.jet-woo-categories.jet-equal-cols .jet-woo-categories__item .jet-woo-categories__inner-box {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.jet-woo-category-thumbnail img {
+  width: 100%;
+}
