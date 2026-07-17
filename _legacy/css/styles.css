@@ -795,6 +795,27 @@ svg { display: inline-block; }
   }
 }
 
+/* Locations page hero — video background, layered above the fallback
+   image/gradient (.hero::before) and below a dedicated darkening
+   overlay (.hero--locations::after) that keeps hero text readable */
+.hero--locations .hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero--locations::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(14, 25, 54, 0.75) 0%, rgba(14, 25, 54, 0.35) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero::before {
     animation: m-hero-float 16s ease-in-out infinite alternate;
