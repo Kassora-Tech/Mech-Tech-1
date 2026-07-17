@@ -234,18 +234,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main id="main">
 
   <!-- ============ PAGE HERO ============ -->
-  <section class="hero hero--page hero--products">
-    <div class="container hero__grid">
-      <div>
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Products</span>
-        </nav>
-        <h1 class="hero__title">Product <em>Range</em></h1>
-        <div class="hero__rule" aria-hidden="true"></div>
-        <p class="hero__sub">New and used machine tools across cutting, forming, drilling, turning, CNC and finishing. If we don't have it, we'll source it for you.</p>
-      </div>
+ <section class="hero hero--page hero--products">
+  <video class="hero-bg-video" autoplay muted loop playsinline preload="auto">
+    <source src="videos/hero-video-products.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="container hero__grid">
+    <div>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Products</span>
+      </nav>
+
+      <h1 class="hero__title">Product <em>Range</em></h1>
+      <div class="hero__rule" aria-hidden="true"></div>
+
+      <p class="hero__sub">
+        New and used machine tools across cutting, forming, drilling,
+        turning, CNC and finishing. If we don't have it, we'll source it for you.
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ============ CATALOG ============ -->
   <section class="section">
@@ -829,6 +842,7 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/mechtech.store\/wp-admin\
             </script>
             
 </body>
+
 </html>
 
 
