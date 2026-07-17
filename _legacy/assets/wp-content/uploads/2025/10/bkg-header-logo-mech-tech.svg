@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_3" version="1.1" viewBox="0 0 574 80">
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+
+      .st1 {
+        fill: none;
+      }
+
+      .st2 {
+        fill: #1a3c6d;
+      }
+
+      .st3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="st1" width="574" height="80"></rect>
+    </clipPath>
+  </defs>
+  <g class="st3">
+    <g>
+      <rect class="st0" x="169.6" y="-225" width="235" height="530" rx="8" ry="8" transform="translate(151.3 296.1) rotate(-70)"></rect>
+      <rect class="st2" x="175.1" y="-210" width="224" height="500" rx="8" ry="8" transform="translate(151.3 296.1) rotate(-70)"></rect>
+    </g>
+  </g>
+</svg>
