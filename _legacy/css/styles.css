@@ -1172,3 +1172,6 @@ svg { display: inline-block; }
 /* ---- Discreet footer link to the admin dashboard ---- */
 .footer-admin-link { margin-left: 0.6em; opacity: 0.5; font-size: 0.85em; transition: opacity var(--trans); }
 .footer-admin-link:hover { opacity: 0.9; }
+
+/* ---- Remove decorative blue hexagon behind the "Watch Company Video" thumbnail ---- */
+.elementor-2 .elementor-element.elementor-element-9bb829b.ob-has-background-overlay:after { display: none !important; }
