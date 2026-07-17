@@ -305,6 +305,74 @@
 
   document.querySelectorAll("form[data-quote-form]").forEach(bindQuoteForm);
 
+  /* ---------- Popular tools carousel (home) ----------
+     Turns the "Shop Popular Tools & More" category cards into a Swiper
+     slider. Markup, classes and card design are untouched; we only drive
+     the existing .swiper / .swiper-wrapper / .swiper-slide structure with
+     the Swiper library already loaded on the page.
+
+     The jet-woo widget also auto-initialises its own Swiper on this element,
+     but only on some breakpoints (it skips desktop, where the 4 cards already
+     fit). We run after that on window "load", tear down whatever it created,
+     and drive a single carousel with consistent 4 / 2 / 1 columns, arrows,
+     autoplay and looping. */
+  function initPopularCarousel() {
+    var popularCarousel = document.querySelector(".mt-popular-carousel");
+    if (!popularCarousel || typeof window.Swiper !== "function") return;
+
+    // Remove any instance jet-woo/Elementor already created (and its loop
+    // clones) so we start from clean markup.
+    if (popularCarousel.swiper && typeof popularCarousel.swiper.destroy === "function") {
+      popularCarousel.swiper.destroy(true, true);
+    }
+
+    var popularSwiper = new window.Swiper(popularCarousel, {
+      slidesPerView: 1,          // mobile
+      spaceBetween: 10,
+      loop: true,
+      speed: 500,
+      autoplay: { delay: 5000, disableOnInteraction: false },
+      navigation: {
+        nextEl: popularCarousel.querySelector(".jet-swiper-button-next"),
+        prevEl: popularCarousel.querySelector(".jet-swiper-button-prev")
+      },
+      breakpoints: {
+        768:  { slidesPerView: 2 }, // tablet
+        1024: { slidesPerView: 4 }  // desktop
+      }
+    });
+
+    // Guard against a Swiper timing quirk where autoplay skips auto-starting.
+    if (popularSwiper.autoplay && !popularSwiper.autoplay.running) {
+      popularSwiper.autoplay.start();
+    }
+
+    // Pause on hover. This bundled Swiper build ignores the pauseOnMouseEnter
+    // option, so drive autoplay manually. The transition-end guard keeps it
+    // paused if Swiper tries to re-arm autoplay while the pointer is still over
+    // the carousel.
+    var isHovering = false;
+    popularCarousel.addEventListener("mouseenter", function () {
+      isHovering = true;
+      if (popularSwiper.autoplay) popularSwiper.autoplay.stop();
+    });
+    popularCarousel.addEventListener("mouseleave", function () {
+      isHovering = false;
+      if (popularSwiper.autoplay) popularSwiper.autoplay.start();
+    });
+    popularSwiper.on("slideChangeTransitionEnd", function () {
+      if (isHovering && popularSwiper.autoplay) popularSwiper.autoplay.stop();
+    });
+  }
+
+  if (document.querySelector(".mt-popular-carousel")) {
+    if (document.readyState === "complete") {
+      initPopularCarousel();
+    } else {
+      window.addEventListener("load", initPopularCarousel);
+    }
+  }
+
   /* ---------- Footer year ---------- */
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
