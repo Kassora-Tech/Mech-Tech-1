@@ -161,12 +161,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 /* Hero image brightness/overlay */
 .elementor-element-42467de {
     position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+.elementor-element-42467de .hero-bg-video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
 }
 .elementor-element-42467de::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to right, rgba(14, 25, 54, 0.8) 0%, rgba(14, 25, 54, 0.4) 100%);
+    background: linear-gradient(180deg, rgba(14, 25, 54, 0.55) 0%, rgba(14, 25, 54, 0.15) 40%, rgba(14, 25, 54, 0.15) 60%, rgba(14, 25, 54, 0.55) 100%);
     z-index: 0;
     pointer-events: none;
 }
@@ -236,6 +246,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<div data-elementor-type="wp-page" data-elementor-id="2" class="elementor elementor-2" data-elementor-post-type="page">
 				<section class="elementor-element elementor-element-42467de e-flex e-con-boxed e-con e-parent" data-id="42467de" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;triangle&quot;,&quot;shape_divider_bottom_negative&quot;:&quot;yes&quot;,&quot;_ob_use_container_extras&quot;:&quot;no&quot;,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_glider_is_slider&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+					<video class="hero-bg-video" autoplay muted loop playsinline poster="assets/wp-content/uploads/2025/10/HERO-mech-tech-new-and-used-tools-02.webp">
+						<source src="videos/hero-video-final.mp4" type="video/mp4">
+					</video>
 					<div class="e-con-inner">
 				<div class="elementor-shape elementor-shape-bottom" aria-hidden="true" data-negative="true">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
