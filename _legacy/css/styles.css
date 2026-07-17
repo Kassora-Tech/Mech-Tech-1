@@ -1168,3 +1168,7 @@ svg { display: inline-block; }
   background: var(--clr-navy-800); color: #fff;
   font-family: var(--ff-head); font-weight: 700; font-size: 0.75rem;
 }
+
+/* ---- Discreet footer link to the admin dashboard ---- */
+.footer-admin-link { margin-left: 0.6em; opacity: 0.5; font-size: 0.85em; transition: opacity var(--trans); }
+.footer-admin-link:hover { opacity: 0.9; }

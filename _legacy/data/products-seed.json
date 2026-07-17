@@ -1,0 +1,184 @@
+[
+  {
+    "id": "press-brake-180t",
+    "category": "forming",
+    "title": "Press Brake — 180T",
+    "image": "images/products/press-brake.webp",
+    "badge": "In Stock",
+    "specs": [
+      { "label": "Type", "value": "Hydraulic press brake" },
+      { "label": "Capacity", "value": "180 ton" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Press Brake"
+  },
+  {
+    "id": "box-and-pan-folder",
+    "category": "forming",
+    "title": "Box & Pan Folder",
+    "image": "images/products/box-pan-folder.webp",
+    "badge": "In Stock",
+    "specs": [
+      { "label": "Type", "value": "Side-lock folder" },
+      { "label": "Capacity", "value": "2 × 1270 mm" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Box and Pan Folder"
+  },
+  {
+    "id": "beam-drilling-line",
+    "category": "drilling",
+    "title": "Beam Drilling Line",
+    "image": "images/products/beam-drill.webp",
+    "badge": "In Stock",
+    "specs": [
+      { "label": "Type", "value": "Structural beam line" },
+      { "label": "Application", "value": "Structural steel" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Beam Drilling Machine"
+  },
+  {
+    "id": "buffing-machine-p-9008",
+    "category": "finishing",
+    "title": "Buffing Machine — P-9008",
+    "image": "images/products/buffing-machine.webp",
+    "badge": "In Stock",
+    "specs": [
+      { "label": "Type", "value": "Dual-head buffer" },
+      { "label": "Application", "value": "Polishing & finishing" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Buffing Machine"
+  },
+  {
+    "id": "bandsaws",
+    "category": "cutting",
+    "title": "Bandsaws",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "Horizontal & vertical" },
+      { "label": "Application", "value": "Solid & profile cutting" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Bandsaws"
+  },
+  {
+    "id": "guillotines",
+    "category": "cutting",
+    "title": "Guillotines",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "Hydraulic & mechanical" },
+      { "label": "Application", "value": "Sheet & plate shearing" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Guillotines"
+  },
+  {
+    "id": "cut-off-saws",
+    "category": "cutting",
+    "title": "Cut-Off Saws",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "Abrasive & cold saws" },
+      { "label": "Application", "value": "Bar, tube & section" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Cut Off Saw"
+  },
+  {
+    "id": "plate-rollers",
+    "category": "forming",
+    "title": "Plate Rollers",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "3-roll & 4-roll" },
+      { "label": "Application", "value": "Cylinder & cone rolling" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Platerollers"
+  },
+  {
+    "id": "radial-pedestal-drills",
+    "category": "drilling",
+    "title": "Radial & Pedestal Drills",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "Radial arm & pedestal" },
+      { "label": "Application", "value": "General workshop drilling" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Radial Drill"
+  },
+  {
+    "id": "milling-machines",
+    "category": "drilling",
+    "title": "Milling Machines",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "Turret & universal" },
+      { "label": "Application", "value": "Toolroom & production" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Milling Machines"
+  },
+  {
+    "id": "lathes",
+    "category": "turning",
+    "title": "Lathes",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "Centre & gap-bed" },
+      { "label": "Application", "value": "General turning" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Lathes"
+  },
+  {
+    "id": "cnc-lathes",
+    "category": "cnc",
+    "title": "CNC Lathes",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "CNC turning centres" },
+      { "label": "Application", "value": "Repeatable production" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "CNC Lathes"
+  },
+  {
+    "id": "cnc-plasma-cutters",
+    "category": "cnc",
+    "title": "CNC Plasma Cutters",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "Table & waterbed" },
+      { "label": "Application", "value": "Plate profile cutting" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "CNC Plasma Cutters"
+  },
+  {
+    "id": "grinding-and-sanding",
+    "category": "finishing",
+    "title": "Grinding & Sanding",
+    "image": null,
+    "badge": "",
+    "specs": [
+      { "label": "Type", "value": "Surface & belt machines" },
+      { "label": "Application", "value": "Finishing & deburring" },
+      { "label": "Condition", "value": "New & used available" }
+    ],
+    "quoteMachine": "Grinding and Sanding Machines"
+  }
+]

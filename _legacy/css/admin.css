@@ -1,0 +1,142 @@
+/* ==========================================================================
+   MECH-TECH ADMIN — product manager (add/edit/delete)
+   Builds on top of css/styles.css: reuses the same tokens, .card, .btn,
+   .modal, .form-field and .filterbar/.chip components. Only admin-specific
+   layout (header bar, login card, product grid toolbar, image upload,
+   dynamic spec rows) lives here.
+   ========================================================================== */
+
+body { background: var(--clr-tint); }
+
+/* .btn sets its own `display`, which otherwise beats the UA [hidden] rule
+   at equal specificity and leaves hidden buttons visible. */
+[hidden] { display: none !important; }
+
+/* ---------- Header ---------- */
+.admin-header {
+  background: #fff;
+  border-bottom: 1px solid var(--clr-line);
+}
+.admin-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 72px;
+}
+.brand__logo { height: 48px; }
+.admin-header__title {
+  font-family: var(--ff-head);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--clr-navy-800);
+  font-size: 0.9375rem;
+}
+.admin-header__inner #logout-btn { margin-left: auto; }
+
+/* ---------- Login ---------- */
+.admin-login__wrap {
+  min-height: calc(100vh - 72px);
+  display: grid;
+  place-items: center;
+  padding-block: 3rem;
+}
+.admin-login__card { width: min(420px, 100%); }
+.admin-login__title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+.admin-login__lead { color: var(--clr-muted); font-size: 0.9375rem; margin-bottom: 1.4rem; }
+#login-form .btn { margin-top: 0.75rem; }
+
+/* ---------- Dashboard ---------- */
+.admin-dashboard { padding-block: 2rem 4rem; }
+
+.admin-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.admin-toolbar .filterbar { margin: 0; }
+
+.admin-status {
+  background: #fff;
+  border: 1px solid var(--clr-line);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  margin-bottom: 1.25rem;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.admin-card__category {
+  display: inline-block;
+  font-family: var(--ff-head);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-accent-text);
+  margin-bottom: 0.4rem;
+}
+.admin-card .card__media img { object-fit: cover; }
+
+/* ---------- Image upload ---------- */
+.image-upload { display: flex; flex-direction: column; gap: 0.6rem; }
+.image-upload__preview {
+  aspect-ratio: 4 / 3;
+  max-width: 220px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(160deg, #eef3fa, #dfe8f4);
+  border: 1.5px dashed var(--clr-line);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 0.5rem;
+  text-align: center;
+}
+.image-upload__preview span { color: var(--clr-muted); font-size: 0.8125rem; }
+.image-upload__preview img { width: 100%; height: 100%; object-fit: cover; }
+.image-upload input[type="file"] { font-size: 0.8125rem; }
+
+/* ---------- Specs editor ---------- */
+.specs-editor { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.6rem; }
+.spec-row {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+.spec-row input {
+  width: 100%; font: inherit; color: var(--clr-ink);
+  border: 1.5px solid var(--clr-line); border-radius: 8px;
+  padding: 0.55rem 0.75rem; background: #fff;
+}
+.spec-row input:focus {
+  outline: none; border-color: var(--clr-accent);
+  box-shadow: 0 0 0 3px rgba(47, 122, 245, 0.15);
+}
+.spec-row__remove {
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center;
+  color: var(--clr-muted); font-size: 1.25rem; line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.spec-row__remove:hover { background: var(--clr-tint); color: #d64545; }
+
+/* ---------- Modal form actions ---------- */
+.admin-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}

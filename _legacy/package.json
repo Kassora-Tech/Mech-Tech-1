@@ -1,0 +1,9 @@
+{
+  "name": "mech-tech-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Mech-Tech static site + Vercel serverless admin (products stored in Vercel Blob).",
+  "dependencies": {
+    "@vercel/blob": "^0.27.0"
+  }
+}

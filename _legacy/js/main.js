@@ -109,13 +109,15 @@
   if (filterbar) {
     var chips = filterbar.querySelectorAll(".chip");
     var searchInput = filterbar.querySelector(".searchbox input");
-    var products = document.querySelectorAll("[data-category]");
     var emptyNote = document.querySelector(".filter-empty");
     var activeCategory = "all";
 
     var applyFilters = function () {
       var q = searchInput ? searchInput.value.trim().toLowerCase() : "";
       var visible = 0;
+      // Re-queried on every pass: js/products-render.js injects the cards
+      // asynchronously after this script runs, so none exist yet at load time.
+      var products = document.querySelectorAll("[data-category]");
       products.forEach(function (card) {
         var inCategory = activeCategory === "all" || card.getAttribute("data-category") === activeCategory;
         var inSearch = q === "" || card.textContent.toLowerCase().indexOf(q) !== -1;
@@ -140,6 +142,9 @@
     });
 
     if (searchInput) searchInput.addEventListener("input", applyFilters);
+
+    // Re-apply once product cards are injected asynchronously.
+    window.addEventListener("products:rendered", applyFilters);
   }
 
   /* ---------- Company video: swap thumbnail for embed on demand ---------- */

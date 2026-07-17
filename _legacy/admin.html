@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mech-Tech Admin — Products</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <div class="container admin-header__inner">
+      <a href="index.html" class="brand">
+        <img src="images/mech-tech-logo-blue-final.svg" alt="Mech-Tech" class="brand__logo">
+      </a>
+      <span class="admin-header__title">Product Admin</span>
+      <button class="btn btn--ghost btn--sm" id="logout-btn" type="button" hidden>Log Out</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ LOGIN VIEW ============ -->
+    <section class="admin-login" id="login-view">
+      <div class="container admin-login__wrap">
+        <div class="card admin-login__card">
+          <div class="card__body">
+            <h1 class="admin-login__title">Admin Login</h1>
+            <p class="admin-login__lead">Enter the admin password to manage products.</p>
+            <form id="login-form" novalidate>
+              <div class="form-field">
+                <label for="admin-password">Password <span class="req">*</span></label>
+                <input type="password" id="admin-password" name="password" autocomplete="current-password" required>
+                <p class="form-error" id="login-error">Incorrect password.</p>
+              </div>
+              <button class="btn btn--primary btn--block" type="submit">Log In</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DASHBOARD VIEW ============ -->
+    <section class="admin-dashboard" id="dashboard-view" hidden>
+      <div class="container">
+
+        <div class="admin-toolbar">
+          <div class="filterbar" role="group" aria-label="Filter products">
+            <button class="chip is-active" data-filter="all" aria-pressed="true" type="button">All</button>
+            <button class="chip" data-filter="cutting" aria-pressed="false" type="button">Cutting</button>
+            <button class="chip" data-filter="forming" aria-pressed="false" type="button">Forming</button>
+            <button class="chip" data-filter="drilling" aria-pressed="false" type="button">Drilling &amp; Milling</button>
+            <button class="chip" data-filter="turning" aria-pressed="false" type="button">Turning</button>
+            <button class="chip" data-filter="cnc" aria-pressed="false" type="button">CNC</button>
+            <button class="chip" data-filter="finishing" aria-pressed="false" type="button">Finishing</button>
+          </div>
+          <button class="btn btn--primary btn--sm" id="add-product-btn" type="button">+ Add Product</button>
+        </div>
+
+        <p class="admin-status" id="admin-status" hidden></p>
+
+        <div class="grid admin-grid" id="admin-grid"></div>
+        <p class="filter-empty is-visible" id="admin-empty">No products yet — click &ldquo;Add Product&rdquo; above.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ ADD / EDIT MODAL ============ -->
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" hidden>
+    <div class="modal__scrim" data-modal-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-modal-close aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h2 id="product-modal-title">Add Product</h2>
+
+      <form id="product-form" novalidate>
+        <input type="hidden" name="id">
+        <div class="form-grid">
+
+          <div class="form-field">
+            <label for="pf-title">Title <span class="req">*</span></label>
+            <input type="text" id="pf-title" name="title" required>
+            <p class="form-error">Please enter a product title.</p>
+          </div>
+
+          <div class="form-field">
+            <label for="pf-category">Category <span class="req">*</span></label>
+            <select id="pf-category" name="category" required>
+              <option value="">Select a category</option>
+              <option value="cutting">Cutting</option>
+              <option value="forming">Forming</option>
+              <option value="drilling">Drilling &amp; Milling</option>
+              <option value="turning">Turning</option>
+              <option value="cnc">CNC</option>
+              <option value="finishing">Finishing</option>
+            </select>
+            <p class="form-error">Please choose a category.</p>
+          </div>
+
+          <div class="form-field">
+            <label for="pf-badge">Badge</label>
+            <input type="text" id="pf-badge" name="badge" placeholder="e.g. In Stock">
+          </div>
+
+          <div class="form-field">
+            <label for="pf-quote-machine">Quote Machine Name <span class="req">*</span></label>
+            <input type="text" id="pf-quote-machine" name="quoteMachine" required>
+            <p class="form-error">Please enter the machine name used on quote requests.</p>
+          </div>
+
+          <div class="form-field">
+            <label>Photo</label>
+            <div class="image-upload">
+              <div class="image-upload__preview" id="image-preview"><span>No photo — will show the default gear icon</span></div>
+              <input type="file" id="pf-image-input" accept="image/png,image/jpeg,image/webp">
+              <button class="btn btn--ghost btn--sm" type="button" id="image-remove-btn" hidden>Remove Photo</button>
+            </div>
+            <input type="hidden" name="image">
+            <p class="form-error" id="image-error">Could not upload that image.</p>
+          </div>
+
+          <div class="form-field">
+            <label>Specifications <span class="req">*</span></label>
+            <div class="specs-editor" id="specs-editor"></div>
+            <button class="btn btn--ghost btn--sm" type="button" id="add-spec-btn">+ Add Spec Row</button>
+            <p class="form-error" id="specs-error">Add at least one spec row (up to 3).</p>
+          </div>
+
+        </div>
+
+        <div class="admin-form-actions">
+          <button class="btn btn--ghost" type="button" data-modal-close>Cancel</button>
+          <button class="btn btn--primary" type="submit" id="product-save-btn">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
